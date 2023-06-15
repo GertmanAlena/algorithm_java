@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d77c70b5-c3a7-4c30-8c41-70b6e7aaa3b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Homework.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Seminar_3_List.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/List.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,20 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Search">
+  <component name="RunManager" selected="Application.Homework">
+    <configuration name="Homework" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Homework" />
+      <module name="algoritm_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="algoritm_JAVA" />
@@ -83,6 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Homework" />
         <item itemvalue="Application.Search" />
         <item itemvalue="Application.Main" />
       </list>
@@ -98,7 +113,7 @@
       <updated>1686239987592</updated>
       <workItem from="1686239990555" duration="23063000" />
       <workItem from="1686670239483" duration="25176000" />
-      <workItem from="1686816188370" duration="8092000" />
+      <workItem from="1686816188370" duration="14885000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;дз 1 ок&quot;">
       <created>1686727582590</created>
@@ -107,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686727582590</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;лекция 3 алгоритмы списки&quot;">
+      <created>1686846216888</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686846216888</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +137,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;дз 1 ок&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;дз 1 ок&quot;" />
+    <MESSAGE value="&quot;лекция 3 алгоритмы списки&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;лекция 3 алгоритмы списки&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
