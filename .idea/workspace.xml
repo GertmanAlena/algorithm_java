@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d77c70b5-c3a7-4c30-8c41-70b6e7aaa3b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Homework.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Seminar_3_List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Tree_Seminar_Algoritm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/List.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,8 @@
       <updated>1686239987592</updated>
       <workItem from="1686239990555" duration="23063000" />
       <workItem from="1686670239483" duration="25176000" />
-      <workItem from="1686816188370" duration="14885000" />
+      <workItem from="1686816188370" duration="15523000" />
+      <workItem from="1687181687858" duration="3112000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;дз 1 ок&quot;">
       <created>1686727582590</created>
@@ -129,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686846216888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;homework revert list&quot;">
+      <created>1686860163844</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686860163844</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +144,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;дз 1 ок&quot;" />
     <MESSAGE value="&quot;лекция 3 алгоритмы списки&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;лекция 3 алгоритмы списки&quot;" />
+    <MESSAGE value="&quot;homework revert list&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;homework revert list&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
