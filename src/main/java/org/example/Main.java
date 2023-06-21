@@ -1,165 +1,179 @@
 package org.example;
 
-import java.util.Date;
-import java.util.Scanner;
+class HashMapp {
 
-public class Main {
-
-    final static int[] buffer = new int[100000];
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите длинну массива -> ");
-        Integer length = scanner.nextInt();
-
-        int[] array1 = interArray(length);
-//        Date start = new Date();
-        mergeSort(array1);
-//        Date end = new Date();
-//        long timeMerge = end.getTime() - start.getTime();
-//        System.out.print("after -> ");
-        System.out.print("отсортированный массив ->  ");
-        for (int i = 0; i < array1.length; i++) {
-            System.out.print(array1[i] + " ");
-        }
-//        Date start2 = new Date();
-//        arraySort(interArray(length));
-//        Date end2 = new Date();
-//        long timeInter = end2.getTime() - start2.getTime();
-
-        System.out.println();
-//        System.out.printf("timeMerge = %d, timeInter = %d", timeMerge, timeInter);
-
-        System.out.print("Какое число ищем? -> ");
-        int value = scanner.nextInt();
-
-//        Date startBinarySearch = new Date();
-        binarySearch(array1, value);
-//        Date endBinarySearch = new Date();
-//        long BinarySearch = endBinarySearch.getTime() - startBinarySearch.getTime();
-
-//        Date startBinarySearch2 = new Date();
-        binarySearch2(array1, value);
-//        Date endBinarySearch2 = new Date();
-//        long BinarySearch2 = endBinarySearch2.getTime() - startBinarySearch2.getTime();
-
-//        System.out.printf("BinarySearch = %d, BinarySearch2 = %d", BinarySearch, BinarySearch2);
-
+    class Entity {  //сущность
+        int key;
+        int value;
     }
-    public static void binarySearch(int[]array, int value){ // 3, 5, 8, 10, 15, 28, 36
-        System.out.println("binarySearch " + binarySearch(array, value, 0, array.length -1));
-    }
-    private static Integer binarySearch(int[]array, int value, int left, int right){
-        int midpoint;
-        if (right < left){
-            return -1;
-        } else {
-            midpoint = (right - left) / 2 + left;
+    class Basket{   //корзина для обработки объектов
+        Node head;
+        class Node {
+            Entity entity;
+            Node next;
         }
-
-        if (array[midpoint] < value) {
-            return binarySearch(array, value, midpoint + 1, right);
-        } else {
-            if (array[midpoint] > value) {
-                return binarySearch(array, value, left, midpoint - 1);
-            } else {
-                return midpoint;
+        public Integer find(int key) {
+            Node node = head;
+            while (node!= null) {
+                if (node.entity.key == key) {
+                    return node.entity.value;
+                }
+                node = node.next;
             }
+            return null;   //если дошли до конца цикла и не нашли
         }
-
-    }
-
-    private static Integer binarySearch2(int[]array, int value){
-
-        int left = 0, right = array.length - 1;
-        while (right - left > 1){
-            int mid = (right - left) / 2;
-            if (array[mid] < value){
-                left = mid;
+        public boolean push(Entity entity) {
+            Node node = new Node();
+            node.entity = entity;
+            if (head == null) {
+                head = node;
             } else {
-                right = mid;
+                if(head.entity.key == entity.key) {
+                    return false;
+                } else {Node currentNode = head;
+                    while (currentNode.next != null) {
+                        if (currentNode.next.entity.key == entity.key) {   //если такой же элемент найден
+                            return false;
+                        }
+                        currentNode = currentNode.next;
+                    }
+                    currentNode.next = node;
+                }
             }
+            return true;
         }
-        if (array[left] == value){
-            System.out.println("binarySearch2 " + left);
-            return left;
-        }
-        if (array[right] == value){
-            System.out.println("binarySearch2 " + right);
-            return right;
-        }
-        System.out.println("binarySearch2 " + null);
-        return null;
-
-    }
-    public static void mergeSort (int[] array){  // сотрировка слиянием
-        mergeSort(array, 0, array.length - 1);
-
-    }
-
-    private static void mergeSort (int[] array, int left, int right){
-        if (left == right){
-            return;
-        }
-        int mid = (left + right) / 2;
-        mergeSort(array, left, mid);
-        mergeSort(array, mid + 1, right);
-
-        //слияние
-        int i = left, j = mid + 1, k = left;
-        while (i <= mid && j <= right) {
-            if (array[i] < array[j]) {
-                buffer[k] = array[i];
-                i++;
-            } else {
-                buffer[k] = array[j];
-                j++;
+        public boolean remove(int key) {
+            if (head != null) {
+                if(head.entity.key == key) {
+                    head = head.next;
+                    return true;
+                } else {
+                    Node currentNode = head;
+                    while (currentNode.next != null) {
+                        if (currentNode.next.entity.key == key) {   //если такой же элемент найден
+                            currentNode.next = currentNode.next.next;
+                            return true;
+                        }
+                        currentNode = currentNode.next;
+                    }
+                }
             }
-            k++;
+            return false;
         }
-        while (i <= mid) {
-            buffer[k++] = array[i++];
-        }
-        while (j <= right) {
-           buffer[k++] = array[j++];
-        }
-        // перекладываем из буфера в array
+    }
+    //размер массива (размер hashMAp начинается с 16)
+    static final int INIT_SIZE = 16;
+    Basket[] baskets;   //массив корзинок
 
-        for (int l = left; l <= right; l++) {
-            array[l] = buffer[l];
-//            System.out.print(array[l] + " ");
-        }
-
+    public HashMapp(){
+        this(INIT_SIZE);
+    }
+    public HashMapp(int size){
+        baskets = new Basket[size];
+    }
+    private int getIndex(int key){
+        return key % baskets.length;   //Возвражает индекс элемента
     }
 
-
-    public static int[]interArray (int length) {
-        int[] array = new int[length];
-        for (int i = 0; i < length; i++) {
-            array[i] = (int) (Math.random() * 100);
+    public Integer find(int key){
+        int index = getIndex(key);
+        Basket bucket = baskets[index];
+        if(bucket != null){   // если корзина не найдена
+            return bucket.find(key);
         }
-        System.out.print("первоначальный массив - >  ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
-        return array;
+        return null;   // Объект не найдет, т.к. нет корзины
     }
-    public static int[]arraySort (int[] array) { //сортировка вставками
+    public boolean push(int key, int value) {
+        int index = getIndex(key);   //находим индекс
+        Basket basket = baskets[index];   //находим корзину
+        if(basket == null){   // если корзина не найдена, создаём её
+            basket = new Basket();
+            baskets[index] = basket;
+        }
+        Entity entity = new Entity();
+        entity.key = key;
+        entity.value = value;
+        return basket.push(entity);
+    }
+    public boolean remove(int key) {
+        int index = getIndex(key);   //находим индекс
+        Basket basket = baskets[index];   //находим корзину
+        if(basket != null){   // если корзина
+            return basket.remove(key);
+        }
+        return false;
+    }
+}
+class Tree{
+    Node root;
+    class Node{
+        int value;
+        Node left;
+        Node right;
+    }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length; j++){
-                if (array[i] > array[j]) {
-                    int temp = array[j];
-                    array[j] = array[i];
-                    array[i] = temp;
+    public Node find(int value){
+        return find(root, value);
+    }
+    private Node find(Node node, int value){
+        if(node == null){
+            return null;
+        }
+        if(node.value == value){
+            return node;
+        }
+        if(node.value < value){
+            return find(node.right, value);
+        }
+        return find(node.left, value);
+    }
+    public void insert(int value){
+        if(root == null){
+            root = new Node();
+            root.value = value;
+        }else{
+            insert(root, value);
+        }
+    }
+    public void insert(Node node, int value){
+        if(node.value != value){
+            if(node.value < value){
+                if(node.right == null){
+                    node.right = new Node();
+                    node.right.value = value;
+                }else{
+                    insert(node.right, value);
+                }
+            }else{
+                if(node.left == null){
+                    node.left = new Node();
+                    node.left.value = value;
+                }else{
+                    insert(node.left, value);
                 }
             }
         }
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        return array;
     }
+}
 
+public class Main {
+     public static void main(String[] args) {
+//         HashMapp map = new HashMapp();
+//
+//         map.push(1, 2);
+//         map.push(3, 4);
+//         System.out.println("1  " + map.find(1));
+//         System.out.println("2  " + map.find(2));
+//         map.remove(1);
+//         map.push(2, 5);
+//         System.out.println("1  " + map.find(1));
+//         System.out.println("2  " + map.find(2));
+//         System.out.println("3  " + map.find(3));
+         Tree tree = new Tree();
+         for (int i = 0; i <= 5; i++) {
+             tree.insert(i);
+         }
+
+
+    }
 }

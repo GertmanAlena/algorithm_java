@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d77c70b5-c3a7-4c30-8c41-70b6e7aaa3b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Tree_Seminar_Algoritm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Homework">
+  <component name="RunManager" selected="Application.Tree_Homework_Itog">
     <configuration name="Homework" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Homework" />
       <module name="algoritm_JAVA" />
@@ -93,11 +95,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tree_Homework_Itog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Tree_Homework_Itog" />
+      <module name="algoritm_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tree_Homework_Itog" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Homework" />
         <item itemvalue="Application.Search" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +128,7 @@
       <workItem from="1686239990555" duration="23063000" />
       <workItem from="1686670239483" duration="25176000" />
       <workItem from="1686816188370" duration="15523000" />
-      <workItem from="1687181687858" duration="3112000" />
+      <workItem from="1687181687858" duration="31142000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;дз 1 ок&quot;">
       <created>1686727582590</created>
@@ -135,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686860163844</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;4 семинар дерево&quot;">
+      <created>1687202779662</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687202779662</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +168,8 @@
     <MESSAGE value="&quot;дз 1 ок&quot;" />
     <MESSAGE value="&quot;лекция 3 алгоритмы списки&quot;" />
     <MESSAGE value="&quot;homework revert list&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;homework revert list&quot;" />
+    <MESSAGE value="&quot;4 семинар дерево&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;4 семинар дерево&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -168,11 +192,71 @@
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>32</line>
+          <properties class="org.example.Tree_Homework_Itog" method="insert">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>45</line>
+          <properties class="org.example.Tree_Homework_Itog" method="insert">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>71</line>
+          <properties class="org.example.Tree_Homework_Itog" method="balance">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>96</line>
+          <properties class="org.example.Tree_Homework_Itog" method="colorSwap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>101</line>
+          <properties class="org.example.Tree_Homework_Itog" method="leftSwap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>110</line>
+          <properties class="org.example.Tree_Homework_Itog" method="rightSwap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Tree_Homework_Itog.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="array" />
+        <watch expression="tree.root" />
       </configuration>
     </watches-manager>
   </component>
