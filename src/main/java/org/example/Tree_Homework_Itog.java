@@ -4,16 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 class Tree_Homework_Itog {
-    Node root;
-    class Node {
-        int value;
-        Color color;
-        Node leftChild;
-        Node rightChild;
-    }
-    public enum Color {
-        RED, BLACK
-    }
+    private Node root;
+
     public Node find(int value) {
         return find(root, value);
     }
@@ -43,7 +35,7 @@ class Tree_Homework_Itog {
             return res;
         }
     }
-    public boolean insert(Node node, int value) {
+    private boolean insert(Node node, int value) {
         if (node.value != value) {
             if (node.value > value) {
                 if (node.leftChild == null) {
@@ -51,19 +43,23 @@ class Tree_Homework_Itog {
                     node.leftChild.value = value;
                     node.leftChild.color = Color.RED;
                     node.leftChild = balance(node.leftChild);
+                    return true;
                 } else {
-                    insert(node.leftChild, value);
-
+                    boolean result = insert(node.leftChild, value);
+                    node.leftChild = balance(node.leftChild);
+                    return result;
                 }
             } else {
                 if (node.rightChild == null) {
                     node.rightChild = new Node();
                     node.rightChild.value = value;
                     node.rightChild.color = Color.RED;
+                    node.rightChild = balance(node.rightChild);
                     return true;
                 } else {
-                    insert(node.rightChild, value);
-
+                    boolean result = insert(node.rightChild, value);
+                    node.rightChild = balance(node.rightChild);
+                    return result;
                 }
             }
         }
@@ -117,7 +113,23 @@ class Tree_Homework_Itog {
         node.color = Color.RED;
         return rightChild;
     }
+    class Node {
+        private int value;
+        private Color color;
+        private Node leftChild;
+        private Node rightChild;
 
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    ", color=" + color +
+                    '}';
+        }
+    }
+    public enum Color {
+        RED, BLACK
+    }
 
     public static void main(String[] args) {
 
